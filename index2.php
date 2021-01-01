@@ -1,0 +1,686 @@
+﻿<?php
+require_once("action.php");
+$page = basename($_SERVER['PHP_SELF']);
+$page_title = "";
+require_once("header.php"); ?>
+<!-- END HEADER -->
+<!-- HERO-4
+    ============================================= -->
+
+<!-- INFO-4
+    ============================================= -->
+<section id="about-1" class="about-section division">
+    <div class="container">
+        <div class="row d-flex align-items-center">
+
+
+            <!-- ABOUT BOX #1 -->
+            <div id="abox-1" class="col-md-6 col-lg-3">
+                <div class="abox-1 white-color">
+
+                    <!-- Title -->
+                    <h5 class="h5-md">Working Time</h5>
+
+                    <!-- Table -->
+                    <table class="table white-color">
+                        <tbody>
+                            <tr>
+                                <td>Mon – Wed</td>
+                                <td> - </td>
+                                <td class="text-right">9:00 AM - 7:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td> - </td>
+                                <td class="text-right">9:00 AM - 6:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td> - </td>
+                                <td class="text-right">9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr class="last-tr">
+                                <td>Sun - Sun</td>
+                                <td>-</td>
+                                <td class="text-right">CLOSED</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+
+            <!-- ABOUT BOX #2 -->
+            <div id="abox-2" class="col-md-6 col-lg-3">
+                <div class="abox-1 white-color">
+
+                    <h5 class="h5-md">Doctors Timetable</h5>
+
+                    <!-- Text -->
+                    <p>
+                        An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and
+                        vitae a purus primis ipsum magna ipsum
+                    </p>
+
+                    <!-- Button -->
+                    <a href="timetable.html" class="btn btn-sm btn-tra-white mt-25">View Timetable</a>
+
+                </div>
+            </div>
+
+
+            <!-- ABOUT BOX #3 -->
+            <div id="abox-3" class="col-md-6 col-lg-3">
+                <div class="abox-1 white-color">
+
+                    <!-- Title -->
+                    <h5 class="h5-md">Appointments</h5>
+
+                    <!-- Text -->
+                    <p>
+                        An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and
+                        vitae a purus primis ipsum magna ipsum
+                    </p>
+
+                    <!-- Button -->
+                    <a href="#" class="btn btn-sm btn-tra-white mt-25">Make an Apointment</a>
+
+                </div>
+            </div>
+
+
+            <!-- ABOUT BOX #4 -->
+            <div id="abox-4" class="col-md-6 col-lg-3">
+                <div class="abox-1 white-color">
+
+                    <!-- Title -->
+                    <h5 class="h5-md">Emergency Cases</h5>
+
+                    <!-- Text -->
+                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i> 1-800-123-4560</h5>
+                    <p class="mt-20">
+                        An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and
+                        vitae a purus primis ipsum magna ipsum
+                    </p>
+
+                </div>
+            </div>
+
+
+        </div> <!-- End row -->
+    </div> <!-- End container -->
+</section>
+<?php
+$where = array(
+    "id" => 1,
+);
+$row_wcu = $obj->selectData("welcome", $where);
+// print_r($row);
+if ($row_wcu) {
+?>
+    <section id="info-4" class="wide-100 info-section division">
+        <div class="container">
+
+
+            <!-- TOP ROW -->
+            <div class="top-row mb-80">
+                <div class="row d-flex align-items-center">
+
+
+                    <!-- INFO IMAGE -->
+                    <div class="col-lg-6">
+                        <div class="info-4-img text-center wow fadeInUp" data-wow-delay="0.6s">
+                            <img class="img-fluid" src="images/<?php echo $row_wcu["img"]; ?>" alt="info-image">
+                        </div>
+                    </div>
+
+
+                    <!-- INFO TEXT -->
+                    <div class="col-lg-6">
+                        <div class="txt-block pc-30 wow fadeInUp" data-wow-delay="0.4s">
+
+                            <!-- Section ID -->
+                            <span class="section-id blue-color">Welcome to Garg Hospital Multi Speciality</span>
+
+                            <!-- Title -->
+                            <h3 class="h3-md steelblue-color"><?php echo $row_wcu["title"]; ?></h3>
+
+                            <?php echo $row_wcu["w_desc"]; ?>
+                            <!-- Singnature -->
+
+
+                        </div>
+                    </div> <!-- END TEXT BLOCK -->
+
+
+                </div> <!-- End row -->
+            </div> <!-- END TOP ROW -->
+            <!-- BOTTOM ROW -->
+
+
+
+        </div> <!-- End container -->
+    </section>
+<?php
+} else {
+    echo "";
+}
+?>
+<!-- END INFO-4 -->
+<!-- SERVICES-7
+    ============================================= -->
+
+<section id="services-7" class="bg-lightgrey wide-70 servicess-section division">
+    <div class="container">
+
+
+        <!-- SECTION TITLE -->
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 section-title">
+
+                <!-- Title 	-->
+                <h3 class="h3-md steelblue-color">Total Health Care Solutions</h3>
+
+                <!-- Text -->
+                <p>
+                    Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
+                    blandit posuere ligula varius congue cursus porta feugiat
+                </p>
+
+            </div>
+        </div>
+
+
+        <div class="row">
+
+
+            <!-- SERVICE BOXES -->
+            <div class="col-lg-8">
+                <div class="row">
+                    <?php
+                    $record_features = $obj->getData("features");
+                    if ($record_features) {
+                        $sr = 0;
+                        foreach ($record_features as $row_features) {
+                            $sr++;
+                    ?>
+
+                            <!-- SERVICE BOX #1 -->
+                            <div class="col-md-6">
+                                <div class="sbox-7 icon-xs wow fadeInUp" data-wow-delay="0.4s">
+                                    <a href="service-1.html">
+                                        <span class="flaticon-137-doctor blue-color"></span>
+                                        <!-- <img style="width: 50px;" src="images/<?php echo $row_features["img"]; ?>" alt="" srcset=""> -->
+
+                                        <!-- Text -->
+                                        <div class="sbox-7-txt">
+
+                                            <!-- Title -->
+                                            <h5 class="h5-sm steelblue-color"><?php echo $row_features["title"]; ?></h5>
+
+                                            <!-- Text -->
+                                            <p class="p-sm">
+                                                <?php echo substr(strip_tags($row_features["f_desc"]), 0, 50); ?>...
+                                            </p>
+
+                                        </div>
+
+                                    </a>
+                                </div>
+                            </div> <!-- END SERVICE BOX #1 -->
+
+                    <?php
+                        }
+                    } else {
+                        echo "";
+                    } ?>
+
+                </div>
+            </div> <!-- END SERVICE BOXES -->
+            <!-- INFO TABLE -->
+            <div class="col-lg-4">
+                <div class="services-7-table blue-table mb-30 wow fadeInUp" data-wow-delay="0.6s">
+
+                    <!-- Title -->
+                    <h4 class="h4-xs">Opening Hours:</h4>
+
+                    <!-- Text -->
+                    <p class="p-sm">
+                        Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor
+                        tempus feugiat and dolor lacinia cursus
+                    </p>
+
+                    <!-- Table -->
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <td>Mon – Wed</td>
+                                <td> - </td>
+                                <td class="text-right">9:00 AM - 7:00 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Thursday</td>
+                                <td>-</td>
+                                <td class="text-right">9:00 AM - 6:30 PM</td>
+                            </tr>
+                            <tr>
+                                <td>Friday</td>
+                                <td>-</td>
+                                <td class="text-right">9:00 AM - 6:00 PM</td>
+                            </tr>
+                            <tr class="last-tr">
+                                <td>Sun - Sun</td>
+                                <td>-</td>
+                                <td class="text-right">Closed</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Title -->
+                    <h5 class="h5-sm">Need a personal health plan?</h5>
+
+                    <!-- Text -->
+                    <p class="p-sm">Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor</p>
+
+                </div>
+            </div> <!-- END INFO TABLE -->
+
+
+        </div> <!-- End row -->
+    </div> <!-- End container -->
+</section> <!-- END SERVICES-7 -->
+<!-- STATISTIC-3
+    ============================================= -->
+<?php
+$where_wwa = array(
+    "id" => 7
+);
+$row_wwa = $obj->selectData("pages", $where_wwa);
+// print_r($row);
+if ($row_wwa) {
+?>
+    <div id="statistic-3" class="wide-60 statistic-section division">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+
+                <!-- TEXT BLOCK -->
+                <div class="col-lg-6">
+                    <div class="txt-block pc-30 mb-40 wow fadeInUp" data-wow-delay="0.4s">
+
+                        <!-- Section ID -->
+                        <span class="section-id blue-color"><?php echo $row_wwa["page_title"]; ?></span>
+
+                        <!-- Title -->
+                        <h3 class="h3-md steelblue-color"><?php echo $row_wwa["title"]; ?></h3>
+
+                        <!-- Text -->
+                        <?php echo $row_wwa["page_desc"]; ?>
+
+
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- STATISTIC IMAGE -->
+                <div class="col-lg-6">
+                    <div class="statistic-img text-center mb-40 wow fadeInUp" data-wow-delay="0.6s">
+                        <img class="img-fluid" src="images/<?php echo $row_wwa["img"]; ?>" alt="statistic-image" />
+                    </div>
+                </div>
+
+
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </div> <!-- END STATISTIC-3 -->
+<?php
+} else {
+    echo "";
+}
+
+?>
+<!-- INFO-6
+    ============================================= -->
+<section id="services-5" class="bg-lightgrey wide-100 services-section division">
+    <div class="container">
+
+
+        <!-- SECTION TITLE -->
+        <div class="row">
+            <div class="col-lg-10 offset-lg-1 section-title">
+
+                <!-- Title 	-->
+                <h3 class="h3-md steelblue-color">Total Health Care Solutions</h3>
+
+                <!-- Text -->
+                <p>
+                    Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
+                    blandit posuere ligula varius congue cursus porta feugiat
+                </p>
+
+            </div>
+        </div>
+
+
+        <!-- SERVICES CONTENT -->
+        <div class="row">
+            <div class="col-md-12">
+                <div class="owl-carousel owl-theme services-holder">
+
+                    <?php
+                    $record_services = $obj->getData("services");
+                    if ($record_services) {
+                        $sr = 0;
+                        foreach ($record_services as $row_services) {
+                            $sr++;
+                    ?>
+                            <div class="sbox-5">
+
+                                <!-- Image -->
+                                <a href="service_details.php?service=<?php echo $row_services["page_title"]; ?>"> <img class="img-fluid" src="images/<?php echo $row_services["thumb_img"]; ?>..." alt="content-image" /></a>
+
+                                <!-- Text -->
+                                <div class="sbox-5-txt">
+
+                                    <!-- Title -->
+                                    <a href="service_details.php?service=<?php echo $row_services["page_title"]; ?>">
+                                        <h5 data-toggle="tooltip" data-placement="top" title="<?php echo $row_services["title"]; ?>" class="h5-sm blue-color"><?php echo substr($row_services["title"], 0, 10); ?>...</h5>
+                                    </a>
+
+                                    <!-- Text -->
+                                    <p>
+                                        <?php echo $row_services["short_desc"]; ?>...
+                                    </p>
+
+                                </div>
+
+                            </div>
+
+                    <?php
+
+                        }
+                    } else {
+                        echo "";
+                    } ?>
+
+
+                </div>
+            </div>
+        </div> <!-- END SERVICES CONTENT -->
+
+
+    </div> <!-- End container -->
+</section>
+<?php
+$where_wwa = array(
+    "id" => 8
+);
+$row_wwa = $obj->selectData("pages", $where_wwa);
+// print_r($row);
+if ($row_wwa) {
+?>
+    <section id="info-6" class="bg-blue info-section division">
+
+
+        <!-- TEXT BLOCK -->
+        <div class="container">
+            <div class="row d-flex align-items-center">
+                <div class="col-lg-6 offset-lg-6">
+                    <div class="txt-block pc-30 white-color wow fadeInUp" data-wow-delay="0.4s">
+
+                        <!-- Section ID -->
+                        <span class="section-id id-color"><?php echo $row_wwa["page_title"]; ?></span>
+
+                        <!-- Title -->
+                        <h3 class="h3-md"><?php echo $row_wwa["title"]; ?></h3>
+
+                        <!-- CONTENT BOX #1 -->
+                        <div class="box-list">
+                            <div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+                            <p>
+                                <?php echo $row_wwa["page_desc"]; ?>
+                            </p>
+                        </div>
+
+                        <!-- Button -->
+                        <a href="all-doctors.html" class="btn btn-tra-white blue-hover mt-25">Meet The Doctors</a>
+
+                    </div>
+                </div>
+            </div> <!-- End row -->
+        </div> <!-- END TEXT BLOCK -->
+        <!-- INFO-6 IMAGE -->
+        <div class="info-6-img text-center"></div>
+
+
+    </section> <!-- END INFO-6 -->
+<?php
+} else {
+    echo "";
+}
+
+?>
+<!-- TABS-1
+    ============================================= -->
+<!-- END TABS-1 -->
+<!-- TESTIMONIALS-2
+    ============================================= -->
+<!-- END TESTIMONIALS-2 -->
+<!-- DOCTORS-1
+    ============================================= -->
+<?php
+$record_team = $obj->getData("team");
+if ($record_team) {
+?>
+    <section id="doctors-1" class="wide-40 doctors-section division">
+        <div class="container">
+
+
+            <!-- SECTION TITLE -->
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 section-title">
+
+                    <!-- Title 	-->
+                    <h3 class="h3-md steelblue-color">Our Medical Specialists</h3>
+
+                    <!-- Text -->
+                    <p>
+                        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
+                        blandit posuere ligula varius congue cursus porta feugiat
+                    </p>
+
+                </div>
+            </div> <!-- END SECTION TITLE -->
+
+
+            <div class="row">
+                <?php
+                $sr = 0;
+                foreach ($record_team as $row_team) {
+                    $sr++;
+                ?>
+                    <!-- DOCTOR #1 -->
+                    <div class="col-md-6 col-lg-3">
+                        <div class="doctor-1">
+
+                            <!-- Doctor Photo -->
+                            <div class="hover-overlay text-center">
+
+                                <!-- Photo -->
+                                <img class="img-fluid" src="images/<?php echo $row_team["img"]; ?>" alt="doctor-foto">
+                                <div class="item-overlay"></div>
+
+                                <!-- Profile Link -->
+                                <div class="profile-link">
+                                    <a class="btn btn-sm btn-tra-white black-hover" href="doctor-1.html" title="">View More Info</a>
+                                </div>
+
+                            </div>
+
+                            <!-- Doctor Meta -->
+                            <div class="doctor-meta">
+
+                                <h5 class="h5-sm steelblue-color"><?php echo $row_team["name"]; ?></h5>
+                                <span class="blue-color"><?php echo $row_team["post"]; ?></span>
+
+                                <p class="p-sm grey-color">
+                                    <?php echo $row_team["team_desc"]; ?>
+                                </p>
+
+                            </div>
+
+                        </div>
+                    </div> <!-- END DOCTOR #1 -->
+                <?php } ?>
+
+            </div> <!-- End row -->
+            <!-- ALL DOCTORS BUTTON -->
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <div class="all-doctors mb-40">
+                        <a href="all-doctors.html" class="btn btn-blue blue-hover">Meet All Doctors</a>
+                    </div>
+                </div>
+            </div>
+
+
+        </div> <!-- End container -->
+    </section> <!-- END DOCTORS-1 -->
+<?php
+
+
+} else {
+    echo "";
+} ?>
+
+
+<?php
+$recordt = $obj->getData("testimonials");
+if ($recordt) {
+?>
+    <!-- TESTIMONIALS-2
+			============================================= -->
+    <section id="reviews-2" class="bg-lightgrey wide-100 reviews-section division">
+        <div class="container">
+
+
+            <!-- SECTION TITLE -->
+            <div class="row">
+                <div class="col-lg-10 offset-lg-1 section-title">
+
+                    <!-- Title 	-->
+                    <h3 class="h3-md steelblue-color">What Our Patients Say</h3>
+
+                    <!-- Text -->
+                    <p>Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
+                        blandit posuere ligula varius congue cursus porta feugiat
+                    </p>
+
+                </div>
+            </div> <!-- END SECTION TITLE -->
+
+
+            <!-- TESTIMONIALS CONTENT -->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="owl-carousel owl-theme reviews-holder">
+
+                        <?php $sr = 0;
+                        foreach ($recordt as $rowt) {
+                            $sr++;
+                        ?>
+                            <!-- TESTIMONIAL #1 -->
+                            <div class="review-2">
+                                <div class="review-txt text-center">
+
+                                    <!-- Quote -->
+                                    <div class="quote"><img src="images/quote.png" alt="quote-img" /></div>
+
+                                    <!-- Author Avatar -->
+                                    <div class="testimonial-avatar">
+                                        <img src="images/<?php echo $rowt["t_img"]; ?>" alt="testimonial-avatar">
+                                    </div>
+
+                                    <?php echo $rowt["t_desc"]; ?>
+
+                                    <!-- Testimonial Author -->
+                                    <div class="review-author">
+                                        <h5 class="h5-sm"><?php echo $rowt["t_name"]; ?></h5>
+                                        <span><?php echo $rowt["t_title"]; ?></span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--END  TESTIMONIAL #1 -->
+
+                        <?php
+
+                        }
+                        ?>
+
+                    </div>
+                </div>
+            </div> <!-- END TESTIMONIALS CONTENT -->
+
+
+        </div> <!-- End container -->
+    </section> <!-- END TESTIMONIALS-2 -->
+
+<?php  } else {
+    echo "";
+} ?>
+
+<?php
+$where = array(
+    "id" => 9,
+);
+$row_wcu = $obj->selectData("pages", $where);
+// print_r($row);
+if ($row_wcu) {
+?>
+    <section id="about-6" class="pt-100 about-section division">
+        <div class="container">
+            <div class="row d-flex align-items-center">
+
+
+                <!-- TEXT BLOCK -->
+                <div class="col-lg-6">
+                    <div class="txt-block pc-30 wow fadeInUp" data-wow-delay="0.4s">
+
+                        <!-- Section ID -->
+                        <span class="section-id blue-color"><?php echo $row_wcu["page_title"]; ?></span>
+
+                        <!-- Title -->
+                        <h3 class="h3-md steelblue-color"><?php echo $row_wcu["title"]; ?></h3>
+
+                        <!-- CONTENT BOX #1 -->
+                        <div class="box-list">
+                            <div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+                            <?php echo $row_wcu["page_desc"]; ?>
+                        </div>
+
+
+
+                        <!-- Button -->
+                        <a href="who-we-are.html" class="btn btn-blue blue-hover mt-25">Who We Are</a>
+
+                    </div>
+                </div> <!-- END TEXT BLOCK -->
+                <!-- IMAGE BLOCK -->
+                <div class="col-lg-6">
+                    <div class="about-img text-center wow fadeInUp" data-wow-delay="0.6s">
+                        <img class="img-fluid" src="images/<?php echo $row_wcu["img"]; ?>" alt="about-image">
+                    </div>
+                </div>
+
+
+            </div> <!-- End row -->
+        </div> <!-- End container -->
+    </section> <!-- END ABOUT-6 -->
+<?php
+} else {
+    echo "";
+}
+?>
+<!-- FOOTER-1
+    ============================================= -->
+<?php require_once("footer.php"); ?>
