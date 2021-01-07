@@ -12,7 +12,7 @@
 
                       <!-- Footer Logo -->
                       <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80  pixels) -->
-                      <img src="images/<?php echo isset($admin["flogo"]) ? $admin["flogo"] : ""; ?>" width="250"  alt="footer-logo">
+                      <img src="images/<?php echo isset($admin["flogo"]) ? $admin["flogo"] : ""; ?>" width="250" alt="footer-logo">
 
                       <!-- Text -->
                       <p class="p-sm mt-20">
@@ -98,8 +98,8 @@
               <div class="col-md-6 col-lg-3">
                   <div class="footer-box mb-40">
 
-                      <div class="fb-page" data-href="https://www.facebook.com/Garghospital/" data-tabs="timeline" data-width="" data-height="250px" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-                          <blockquote cite="https://www.facebook.com/Garghospital/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Garghospital/">Garg Hospital</a></blockquote>
+                      <div class="fb-page" data-href="https://www.facebook.com/garghospitalmoga/" data-tabs="timeline" data-width="" data-height="250" data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+                          <blockquote cite="https://www.facebook.com/garghospitalmoga/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/garghospitalmoga/">Garg multispeciality hospital</a></blockquote>
                       </div>
                   </div>
               </div>

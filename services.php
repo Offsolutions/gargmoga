@@ -41,12 +41,12 @@ require_once("header.php"); ?>
 			<div class="col-lg-10 offset-lg-1 section-title">
 
 				<!-- Title 	-->
-				<h3 class="h3-md steelblue-color">Total Health Care Solutions</h3>
+				<h3 class="h3-md steelblue-color">Our Services</h3>
 
 				<!-- Text -->
 				<p>
-					Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-					blandit posuere ligula varius congue cursus porta feugiat
+					We give you here a few details so that your experience at our hospitals is
+					comfortable and pleasant.
 				</p>
 
 			</div>

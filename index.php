@@ -32,7 +32,7 @@ require_once("header.php"); ?>
                             <div class="container">
                                 <div class="row">
                                     <div class="col-md-12">
-                                        <div class="caption-txt white-color">
+                                        <div class="caption-txt black-color">
 
                                             <?php echo isset($row_banner["title"]) ? $row_banner["title"] : ""; ?>
                                             <!-- Button -->
@@ -71,33 +71,14 @@ require_once("header.php"); ?>
                 <div class="abox-1 white-color">
 
                     <!-- Title -->
-                    <h5 class="h5-md">Working Time</h5>
+                    <h5 class="h5-md">Emergency Cases</h5>
 
-                    <!-- Table -->
-                    <table class="table white-color">
-                        <tbody>
-                            <tr>
-                                <td>Mon – Wed</td>
-                                <td> - </td>
-                                <td class="text-right">9:00 AM - 7:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Thursday</td>
-                                <td> - </td>
-                                <td class="text-right">9:00 AM - 6:30 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Friday</td>
-                                <td> - </td>
-                                <td class="text-right">9:00 AM - 6:00 PM</td>
-                            </tr>
-                            <tr class="last-tr">
-                                <td>Sun - Sun</td>
-                                <td>-</td>
-                                <td class="text-right">CLOSED</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <!-- Text -->
+                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i><a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a></h5>
+                    <p class="mt-20">
+                        Get The Quality Care That You Deserve Immediately
+                    </p>
+                    <a href="contact.us" class="btn btn-sm btn-tra-white mt-25">Contact Us</a>
 
                 </div>
             </div>
@@ -107,16 +88,15 @@ require_once("header.php"); ?>
             <div id="abox-2" class="col-md-6 col-lg-3">
                 <div class="abox-1 white-color">
 
-                    <h5 class="h5-md">Doctors Timetable</h5>
+                    <h5 class="h5-md">Find a Doctors</h5>
 
                     <!-- Text -->
                     <p>
-                        An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and
-                        vitae a purus primis ipsum magna ipsum
+                        We are the top hospital in Punjab that is served with best doctors in every department who are ready at your service all round the clock.
                     </p>
 
                     <!-- Button -->
-                    <a href="timetable.html" class="btn btn-sm btn-tra-white mt-25">View Timetable</a>
+                    <a href="team.php" class="btn btn-sm btn-tra-white mt-25">click here</a>
 
                 </div>
             </div>
@@ -131,8 +111,7 @@ require_once("header.php"); ?>
 
                     <!-- Text -->
                     <p>
-                        An magnis nulla dolor at sapien augue erat iaculis purus tempor magna ipsum and
-                        vitae a purus primis ipsum magna ipsum
+                        Just make an appointment to get help from our experts. It is simple and quick.
                     </p>
 
                     <!-- Button -->
@@ -145,17 +124,9 @@ require_once("header.php"); ?>
             <!-- ABOUT BOX #4 -->
             <div id="abox-4" class="col-md-6 col-lg-3">
                 <div class="abox-1 white-color">
-
                     <!-- Title -->
-                    <h5 class="h5-md">Emergency Cases</h5>
-
-                    <!-- Text -->
-                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i> 1-800-123-4560</h5>
-                    <p class="mt-20">
-                        An magnis nulla dolor sapien augue erat iaculis purus tempor magna ipsum and
-                        vitae a purus primis ipsum magna ipsum
-                    </p>
-
+                    <h5 class="h5-md">24/7 AVAILABILITY</h5>
+                    <p style="text-align: justify;">Garg Hospital is known for providing advanced emergency services with rapid response for any kind of treatment. Our emergency department is always ready for these services. </p>
                 </div>
             </div>
 
@@ -232,12 +203,12 @@ if ($row_wcu) {
             <div class="col-lg-10 offset-lg-1 section-title">
 
                 <!-- Title 	-->
-                <h3 class="h3-md steelblue-color">Total Health Care Solutions</h3>
+                <h3 class="h3-md steelblue-color">Our Features</h3>
 
                 <!-- Text -->
                 <p>
-                    Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                    blandit posuere ligula varius congue cursus porta feugiat
+                    Garg Hospital believes in providing quality healthcare services at affordable cost.
+                    Our teams of expert medical professionals with combined extensive clinical expertise develop a perfect treatment plan that is best for you.
                 </p>
 
             </div>
@@ -262,18 +233,18 @@ if ($row_wcu) {
                             <div class="col-md-6">
                                 <div class="sbox-7 icon-xs wow fadeInUp" data-wow-delay="0.4s">
                                     <a href="service-1.html">
-                                        <span class="flaticon-137-doctor blue-color"></span>
-                                        <!-- <img style="width: 50px;" src="images/<?php echo $row_features["img"]; ?>" alt="" srcset=""> -->
+                                        <!-- <span class="flaticon-137-doctor blue-color"></span> -->
+
 
                                         <!-- Text -->
                                         <div class="sbox-7-txt">
-
+                                            <img style="width: 50px;" src="images/<?php echo $row_features["img"]; ?>" alt="" srcset="">
                                             <!-- Title -->
                                             <h5 class="h5-sm steelblue-color"><?php echo $row_features["title"]; ?></h5>
 
                                             <!-- Text -->
                                             <p class="p-sm">
-                                                <?php echo substr(strip_tags($row_features["f_desc"]), 0, 50); ?>...
+                                                <?php echo $row_features["f_desc"]; ?>
                                             </p>
 
                                         </div>
@@ -295,45 +266,15 @@ if ($row_wcu) {
                 <div class="services-7-table blue-table mb-30 wow fadeInUp" data-wow-delay="0.6s">
 
                     <!-- Title -->
-                    <h4 class="h4-xs">Opening Hours:</h4>
+                    <h5 class="h5-md">Emergency Cases</h5>
 
                     <!-- Text -->
-                    <p class="p-sm">
-                        Porta semper lacus cursus and feugiat primis ultrice ligula risus auctor
-                        tempus feugiat and dolor lacinia cursus
+                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i><a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a></h5>
+                    <p class="mt-20">
+                        Get The Quality Care That You Deserve Immediately
                     </p>
+                    <a href="contact.us" class="btn btn-sm btn-tra-white mt-25">Contact Us</a>
 
-                    <!-- Table -->
-                    <table class="table">
-                        <tbody>
-                            <tr>
-                                <td>Mon – Wed</td>
-                                <td> - </td>
-                                <td class="text-right">9:00 AM - 7:00 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Thursday</td>
-                                <td>-</td>
-                                <td class="text-right">9:00 AM - 6:30 PM</td>
-                            </tr>
-                            <tr>
-                                <td>Friday</td>
-                                <td>-</td>
-                                <td class="text-right">9:00 AM - 6:00 PM</td>
-                            </tr>
-                            <tr class="last-tr">
-                                <td>Sun - Sun</td>
-                                <td>-</td>
-                                <td class="text-right">Closed</td>
-                            </tr>
-                        </tbody>
-                    </table>
-
-                    <!-- Title -->
-                    <h5 class="h5-sm">Need a personal health plan?</h5>
-
-                    <!-- Text -->
-                    <p class="p-sm">Porta semper lacus cursus, and feugiat primis ultrice ligula at risus auctor</p>
 
                 </div>
             </div> <!-- END INFO TABLE -->
@@ -401,12 +342,12 @@ if ($row_wwa) {
             <div class="col-lg-10 offset-lg-1 section-title">
 
                 <!-- Title 	-->
-                <h3 class="h3-md steelblue-color">Total Health Care Solutions</h3>
+                <h3 class="h3-md steelblue-color">Our Services</h3>
 
                 <!-- Text -->
                 <p>
-                    Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                    blandit posuere ligula varius congue cursus porta feugiat
+                    We give you here a few details so that your experience at our hospitals is
+                    comfortable and pleasant.
                 </p>
 
             </div>
