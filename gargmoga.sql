@@ -1,10 +1,10 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.0.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 30, 2020 at 11:24 AM
--- Server version: 10.4.11-MariaDB
+-- Generation Time: Jan 22, 2021 at 06:25 AM
+-- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.13
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `garg_hospitalmoga`
+-- Database: `gargmoga`
 --
 
 -- --------------------------------------------------------
