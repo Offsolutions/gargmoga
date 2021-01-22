@@ -40,8 +40,10 @@ $meta_keys_admin = $admin["meta_keys"];
 
 
     <link rel="icon" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
+    <link rel="apple-touch-icon" sizes="152x152"
+        href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
+    <link rel="apple-touch-icon" sizes="120x120"
+        href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
     <link rel="apple-touch-icon" sizes="76x76" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
     <link rel="apple-touch-icon" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
 
@@ -53,7 +55,9 @@ $meta_keys_admin = $admin["meta_keys"];
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FONT ICONS -->
-    <link href="../../../../../use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet" crossorigin="anonymous">
+    <link href="../../../../../use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet"
+        crossorigin="anonymous">
     <link href="css/flaticon.css" rel="stylesheet">
 
     <!-- PLUGINS STYLESHEET -->
@@ -79,16 +83,10 @@ $meta_keys_admin = $admin["meta_keys"];
 <body>
 
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0" nonce="QZstAN83"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v9.0"
+        nonce="QZstAN83"></script>
 
 
-    <!-- PRELOADER SPINNER
-    ============================================= -->
-    <div id="loader-wrapper">
-        <div id="loader">
-            <div class="loader-inner"></div>
-        </div>
-    </div>
 
 
 
@@ -106,8 +104,10 @@ $meta_keys_admin = $admin["meta_keys"];
             <!-- MOBILE HEADER -->
             <div class="wsmobileheader clearfix">
                 <a id="wsnavtoggle" class="wsanimated-arrow"><span></span></a>
-                <span class="smllogo"><img src="images/<?php echo isset($admin["flogo"]) ? $admin["flogo"] : ""; ?>" width="300" alt="mobile-logo" /></span>
-                <a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>" class="callusbtn"><i class="fas fa-phone"></i></a>
+                <span class="smllogo"><img src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>"
+                        width="300" alt="mobile-logo" /></span>
+                <a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>" class="callusbtn"><i
+                        class="fas fa-phone"></i></a>
             </div>
 
 
@@ -120,7 +120,9 @@ $meta_keys_admin = $admin["meta_keys"];
                         <!-- LOGO IMAGE -->
                         <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) -->
                         <div class="col-md-5 col-xl-6">
-                            <div class="desktoplogo"><a href="#hero-4"><img src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" width="300" alt="header-logo"></a></div>
+                            <div class="desktoplogo"><a href="#hero-4"><img
+                                        src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>"
+                                        width="300" alt="header-logo"></a></div>
                         </div>
 
                         <!-- WIDGETS -->
@@ -143,7 +145,8 @@ $meta_keys_admin = $admin["meta_keys"];
                                         <span class="flaticon-092-clock blue-color"></span>
                                         <div class="header-widget-txt">
                                             <p class="txt-400">Hours:</p>
-                                            <p class="lightgrey-color"><?php echo isset($admin["open_time"]) ? $admin["open_time"] : ""; ?></p>
+                                            <p class="lightgrey-color">
+                                                <?php echo isset($admin["open_time"]) ? $admin["open_time"] : ""; ?></p>
                                         </div>
                                     </div>
                                 </div>
@@ -170,7 +173,9 @@ $meta_keys_admin = $admin["meta_keys"];
 
                     <!-- LOGO IMAGE -->
                     <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) -->
-                    <div class="desktoplogo"><a href="#hero-4"><img src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" width="300" alt="header-logo"></a></div>
+                    <div class="desktoplogo"><a href="#hero-4"><img
+                                src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" width="300"
+                                alt="header-logo"></a></div>
 
                     <!-- MAIN MENU -->
                     <nav class="wsmenu clearfix">
@@ -197,7 +202,9 @@ $meta_keys_admin = $admin["meta_keys"];
                                         foreach ($recordsh as $rowsh) {
                                             $sr++;
                                     ?>
-                                            <li aria-haspopup="true"><a href="service_details.php?service=<?php echo $rowsh["page_title"]; ?>"><?php echo $rowsh["title"]; ?></a></li>
+                                    <li aria-haspopup="true"><a
+                                            href="service_details.php?service=<?php echo $rowsh["page_title"]; ?>"><?php echo $rowsh["title"]; ?></a>
+                                    </li>
                                     <?php
                                         }
                                     } else {
@@ -214,7 +221,8 @@ $meta_keys_admin = $admin["meta_keys"];
                                 <a href="contact-us.php">Contact Us </a>
                             </li>
                             <!-- HIDDEN NAVIGATION MENU BUTTON -->
-                            <li class="nl-simple header-btn" aria-haspopup="true"><a class="blue-hover" href="timetable.html">Our Doctors Timetable</a></li>
+                            <li class="nl-simple header-btn" aria-haspopup="true"><a class="blue-hover"
+                                    href="timetable.html">Our Doctors Timetable</a></li>
 
 
                         </ul>
@@ -222,7 +230,8 @@ $meta_keys_admin = $admin["meta_keys"];
                     </nav> <!-- END MAIN MENU -->
                     <!-- NAVIGATION MENU BUTTON -->
                     <div class="header-button">
-                        <span class="nl-simple header-btn blue-hover"><a href="timetable.html">Our Doctors Timetable</a></span>
+                        <span class="nl-simple header-btn blue-hover"><a href="timetable.html">Our Doctors
+                                Timetable</a></span>
                     </div>
 
 
