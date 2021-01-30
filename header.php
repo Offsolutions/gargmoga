@@ -35,17 +35,15 @@ $meta_keys_admin = $admin["meta_keys"];
                                     } else {
                                         echo $meta_keys_admin;
                                     } ?>" />
-    <title><?php echo isset($page_title) ? $page_title : "Garg" ?></title>
-    <link href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" rel="shortcut icon" type="image/png">
+    <title><?php echo isset($page_title) ? $page_title : "Garg Hospital Moga" ?></title>
+    <link href="images/icon.png" rel="shortcut icon" type="image/png">
 
 
-    <link rel="icon" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="152x152"
-        href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
-    <link rel="apple-touch-icon" sizes="120x120"
-        href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
-    <link rel="apple-touch-icon" href="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>">
+    <link rel="icon" href="images/icon.png" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/icon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/icon.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/icon.png">
+    <link rel="apple-touch-icon" href="images/icon.png">
 
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
@@ -55,9 +53,7 @@ $meta_keys_admin = $admin["meta_keys"];
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
     <!-- FONT ICONS -->
-    <link href="../../../../../use.fontawesome.com/releases/v5.7.2/css/all.css"
-        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" rel="stylesheet"
-        crossorigin="anonymous">
+    <script src="https://use.fontawesome.com/a1512e3d4a.js"></script>
     <link href="css/flaticon.css" rel="stylesheet">
 
     <!-- PLUGINS STYLESHEET -->
@@ -74,6 +70,9 @@ $meta_keys_admin = $admin["meta_keys"];
 
     <!-- RESPONSIVE CSS -->
     <link href="css/responsive.css" rel="stylesheet">
+
+  
+  
 
 </head>
 
@@ -120,7 +119,7 @@ $meta_keys_admin = $admin["meta_keys"];
                         <!-- LOGO IMAGE -->
                         <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) -->
                         <div class="col-md-5 col-xl-6">
-                            <div class="desktoplogo"><a href="#hero-4"><img
+                            <div class="desktoplogo"><a href="index.php"><img
                                         src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>"
                                         width="300" alt="header-logo"></a></div>
                         </div>
@@ -173,7 +172,7 @@ $meta_keys_admin = $admin["meta_keys"];
 
                     <!-- LOGO IMAGE -->
                     <!-- For Retina Ready displays take a image with double the amount of pixels that your image will be displayed (e.g 360 x 80 pixels) -->
-                    <div class="desktoplogo"><a href="#hero-4"><img
+                    <div class="desktoplogo"><a href="index.php"><img
                                 src="images/<?php echo isset($admin["logo"]) ? $admin["logo"] : ""; ?>" width="300"
                                 alt="header-logo"></a></div>
 
@@ -184,16 +183,16 @@ $meta_keys_admin = $admin["meta_keys"];
 
                             <!-- DROPDOWN MENU -->
                             <li aria-haspopup="true">
-                                <a href="index.php">Home </a>
+                                <a href="index.php">Home</a>
                             </li>
                             <li aria-haspopup="true">
-                                <a href="about-us.php">About Us </a>
+                                <a href="about-us.php">About Us</a>
                             </li>
                             <li aria-haspopup="true">
-                                <a href="gallery.php">Gallery </a>
+                                <a href="gallery.php">Gallery</a>
                             </li>
                             <li aria-haspopup="true">
-                                <a href="services.php">Services <span class="wsarrow"></span></a>
+                                <a href="services.php">Specialities<span class="wsarrow"></span></a>
                                 <ul class="sub-menu">
                                     <?php
                                     $recordsh = $obj->getData("services");
@@ -215,14 +214,14 @@ $meta_keys_admin = $admin["meta_keys"];
                                 </ul>
                             </li> <!-- END DROPDOWN MENU -->
                             <li aria-haspopup="true">
-                                <a href="team.php">Our Team</a>
+                                <a href="team.php">Team</a>
                             </li>
                             <li aria-haspopup="true">
                                 <a href="contact-us.php">Contact Us </a>
                             </li>
                             <!-- HIDDEN NAVIGATION MENU BUTTON -->
                             <li class="nl-simple header-btn" aria-haspopup="true"><a class="blue-hover"
-                                    href="timetable.html">Our Doctors Timetable</a></li>
+                                    href="timetable.php">Our Doctors Timetable</a></li>
 
 
                         </ul>
@@ -230,7 +229,7 @@ $meta_keys_admin = $admin["meta_keys"];
                     </nav> <!-- END MAIN MENU -->
                     <!-- NAVIGATION MENU BUTTON -->
                     <div class="header-button">
-                        <span class="nl-simple header-btn blue-hover"><a href="timetable.html">Our Doctors
+                        <span class="nl-simple header-btn blue-hover"><a href="timetable.php">Our Doctors
                                 Timetable</a></span>
                     </div>
 

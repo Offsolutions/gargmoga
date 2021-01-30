@@ -76,7 +76,7 @@ require_once("header.php"); ?>
 			<!-- CONTACT FORM -->
 			<div class="col-md-7 col-lg-8">
 				<div class="form-holder mb-40">
-					<form name="contactForm" class="row contact-form">
+					<form action="" method="POST" name="" class="row contact-form">
 
 						<!-- Contact Form Input -->
 						<div id="input-name" class="col-md-12 col-lg-6">
@@ -91,33 +91,20 @@ require_once("header.php"); ?>
 							<input type="tel" name="phone" class="form-control phone" placeholder="Enter Your Phone Number*" required>
 						</div>
 
-						<!-- Form Select -->
-						<div id="input-patient" class="col-md-12 col-lg-6 input-patient">
-							<select id="inlineFormCustomSelect3" name="patient" class="custom-select patient" required>
-								<option value="">Have You Visited Us Before?*</option>
-								<option>New Patient</option>
-								<option>Returning Patient</option>
-								<option>Other</option>
-							</select>
-						</div>
+					
 
-						<div id="input-subject" class="col-lg-12">
-							<input type="text" name="subject" class="form-control subject" placeholder="Subject*" required>
-						</div>
+					
 
 						<div id="input-message" class="col-lg-12 input-message">
-							<textarea class="form-control message" name="message" rows="6" placeholder="Your Message ..." required></textarea>
+							<textarea class="form-control message" name="msg" rows="6" placeholder="Your Message ..." required></textarea>
 						</div>
 
 						<!-- Contact Form Button -->
 						<div class="col-lg-12 mt-15 form-btn">
-							<button type="submit" class="btn btn-blue blue-hover submit">Send Your Message</button>
+							<button name="send" value="send" type="submit" class="btn btn-blue blue-hover ">Send Your Message</button>
 						</div>
 
-						<!-- Contact Form Message -->
-						<div class="col-lg-12 contact-form-msg text-center">
-							<div class="sending-msg"><span class="loading"></span></div>
-						</div>
+						
 
 					</form>
 
@@ -133,3 +120,62 @@ require_once("header.php"); ?>
 
 
 <?php require_once("footer.php"); ?>
+
+
+
+
+<?php
+
+
+if (isset($_POST["send"])) {
+//echo "<pre>";
+//print_r($_POST);
+//exit;
+
+	$from = 'info@faqirchandjimarble.com';
+	$fromName = $_POST["name"];
+
+	$subject = $_POST["name"];
+
+	$message = '<html><body>';
+	$message .= '<h1>Garg Hospital Moga</h1>';
+	$message .= '</body></html>';
+
+	$message = '<html><body>';
+
+	$message .= '<table rules="all" style="border-color: #666;" cellpadding="10">';
+	$message .= "<tr style='background: #eee;'><td><strong>Name:</strong> </td><td>" . strip_tags($_POST['name']) . "</td></tr>";
+	$message .= "<tr><td><strong>Email:</strong> </td><td>" . strip_tags($_POST['email']) . "</td></tr>";
+
+	$message .= "<tr><td><strong>Phone</strong> </td><td>" . strip_tags($_POST['phone']) . "</td></tr>";
+
+	$message .= "<tr><td><strong>Message</strong> </td><td>" . strip_tags($_POST['msg']) . "</td></tr>";
+
+	
+	$message .= "</table>";
+	$message .= "</body></html>";
+
+
+	$msg = $_POST['msg'];
+
+
+	// Set content-type header for sending HTML email 
+	$headers = "MIME-Version: 1.0" . "\r\n";
+	$headers .= "Content-type:text/html;charset=UTF-8" . "\r\n";
+
+	// Additional headers 
+	$headers .= 'From: ' . $fromName . '<' . $from . '>' . "\r\n";
+
+	$headers .= 'Reply-To:' . $_POST["email"] . "\r\n";
+//print_r($message);
+//exit;
+	// Send email 
+	if (mail("rana.officialsolutions@gmail.com", $subject, $message, $headers)) {
+		echo "<script>
+        alert('Mail Sent');
+        </script>";
+	}
+}
+
+
+?>

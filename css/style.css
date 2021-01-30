@@ -2780,7 +2780,7 @@ td.text-right {
 .nav-pills .nav-link {
   background-color: transparent;
   border: 1px solid transparent;
-  color: #ccc;
+  color: rgb(0, 0, 0);
   font-size: 1rem;
   font-weight: 400;
   padding: 18px 35px;

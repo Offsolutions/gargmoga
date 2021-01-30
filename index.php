@@ -74,11 +74,12 @@ require_once("header.php"); ?>
                     <h5 class="h5-md">Emergency Cases</h5>
 
                     <!-- Text -->
-                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i><a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a></h5>
+                    <h5 class="h5-lg emergency-call"><i class="fa fa-phone"></i> <a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a>
+                    </h5>
                     <p class="mt-20">
                         Get The Quality Care That You Deserve Immediately
                     </p>
-                    <a href="contact.us" class="btn btn-sm btn-tra-white mt-25">Contact Us</a>
+                    <a href="contact-us.php" class="btn btn-sm btn-tra-white mt-45">Contact Us</a>
 
                 </div>
             </div>
@@ -92,7 +93,8 @@ require_once("header.php"); ?>
 
                     <!-- Text -->
                     <p>
-                        We are the top hospital in Punjab that is served with best doctors in every department who are ready at your service all round the clock.
+                        We are the top hospital in Punjab that is served with best doctors in every department who are
+                        ready at your service all round the clock.
                     </p>
 
                     <!-- Button -->
@@ -115,7 +117,7 @@ require_once("header.php"); ?>
                     </p>
 
                     <!-- Button -->
-                    <a href="#" class="btn btn-sm btn-tra-white mt-25">Make an Apointment</a>
+                    <a href="#" class="btn btn-sm btn-tra-white " style="margin-top: 65px;">Make an Apointment</a>
 
                 </div>
             </div>
@@ -126,7 +128,9 @@ require_once("header.php"); ?>
                 <div class="abox-1 white-color">
                     <!-- Title -->
                     <h5 class="h5-md">24/7 AVAILABILITY</h5>
-                    <p style="text-align: justify;">Garg Hospital is known for providing advanced emergency services with rapid response for any kind of treatment. Our emergency department is always ready for these services. </p>
+                    <p style="text-align: justify;">Garg Hospital is known for providing advanced emergency services
+                        with rapid response for any kind of treatment. Our emergency department is always ready for
+                        these services. </p>
                 </div>
             </div>
 
@@ -208,7 +212,8 @@ if ($row_wcu) {
                 <!-- Text -->
                 <p>
                     Garg Hospital believes in providing quality healthcare services at affordable cost.
-                    Our teams of expert medical professionals with combined extensive clinical expertise develop a perfect treatment plan that is best for you.
+                    Our teams of expert medical professionals with combined extensive clinical expertise develop a
+                    perfect treatment plan that is best for you.
                 </p>
 
             </div>
@@ -232,24 +237,25 @@ if ($row_wcu) {
                             <!-- SERVICE BOX #1 -->
                             <div class="col-md-6">
                                 <div class="sbox-7 icon-xs wow fadeInUp" data-wow-delay="0.4s">
-                                    <a href="service-1.html">
+                                   
                                         <!-- <span class="flaticon-137-doctor blue-color"></span> -->
-
-
+                                        <img style="width: 50px;" src="images/<?php echo $row_features["img"]; ?>" alt="" srcset=""> 
+                                        <h5 class="h5-sm steelblue-color"><?php echo $row_features["title"]; ?></h5>
                                         <!-- Text -->
                                         <div class="sbox-7-txt">
-                                            <img style="width: 50px;" src="images/<?php echo $row_features["img"]; ?>" alt="" srcset="">
+                                           
                                             <!-- Title -->
-                                            <h5 class="h5-sm steelblue-color"><?php echo $row_features["title"]; ?></h5>
+                                          
 
                                             <!-- Text -->
                                             <p class="p-sm">
+                                                
                                                 <?php echo $row_features["f_desc"]; ?>
                                             </p>
 
                                         </div>
 
-                                    </a>
+                                   
                                 </div>
                             </div> <!-- END SERVICE BOX #1 -->
 
@@ -269,11 +275,12 @@ if ($row_wcu) {
                     <h5 class="h5-md">Emergency Cases</h5>
 
                     <!-- Text -->
-                    <h5 class="h5-lg emergency-call"><i class="fas fa-phone"></i><a href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a></h5>
+                    <h5 class="h5-lg emergency-call"><i class="fa fa-phone"></i> <a style="color: white;" href="tel:<?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?>"><?php echo isset($admin["phone"]) ? $admin["phone"] : ""; ?></a>
+                    </h5>
                     <p class="mt-20">
                         Get The Quality Care That You Deserve Immediately
                     </p>
-                    <a href="contact.us" class="btn btn-sm btn-tra-white mt-25">Contact Us</a>
+                    <a href="contact-us.php" class="btn btn-sm btn-tra-white mt-25">Contact Us</a>
 
 
                 </div>
@@ -342,7 +349,7 @@ if ($row_wwa) {
             <div class="col-lg-10 offset-lg-1 section-title">
 
                 <!-- Title 	-->
-                <h3 class="h3-md steelblue-color">Our Services</h3>
+                <h3 class="h3-md steelblue-color">Our Specialities</h3>
 
                 <!-- Text -->
                 <p>
@@ -360,7 +367,7 @@ if ($row_wwa) {
                 <div class="owl-carousel owl-theme services-holder">
 
                     <?php
-                    $record_services = $obj->getData("services");
+                    $record_services = $obj->selectDataAll("services", array("home_show" => 1));
                     if ($record_services) {
                         $sr = 0;
                         foreach ($record_services as $row_services) {
@@ -369,14 +376,15 @@ if ($row_wwa) {
                             <div class="sbox-5">
 
                                 <!-- Image -->
-                                <a href="service_details.php?service=<?php echo $row_services["page_title"]; ?>"> <img style="width: 80px; margin-top: 10px;margin-left:10px;" class="img-fluid" src="images/<?php echo $row_services["thumb_img"]; ?>" alt="content-image" /></a>
+                                <a href="service_details.php?service=<?php echo $row_services["page_title"]; ?>"> <img style="width: 80px; margin-top: 10px;margin-left:auto;margin-right:auto;" class="img-fluid" src="images/<?php echo $row_services["thumb_img"]; ?>" alt="content-image" /></a>
 
                                 <!-- Text -->
                                 <div class="sbox-5-txt">
 
                                     <!-- Title -->
                                     <a href="service_details.php?service=<?php echo $row_services["page_title"]; ?>">
-                                        <h5 data-toggle="tooltip" data-placement="top" title="<?php echo $row_services["title"]; ?>" class="h5-sm blue-color"><?php echo substr($row_services["title"], 0, 10); ?>...</h5>
+                                        <h5 data-toggle="tooltip" data-placement="top" title="<?php echo $row_services["title"]; ?>" class="h5-sm blue-color">
+                                            <?php echo substr($row_services["title"], 0, 10); ?>...</h5>
                                     </a>
 
                                     <!-- Text -->
@@ -428,14 +436,14 @@ if ($row_wwa) {
 
                         <!-- CONTENT BOX #1 -->
                         <div class="box-list">
-                            <div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+                           
                             <p>
                                 <?php echo $row_wwa["page_desc"]; ?>
                             </p>
                         </div>
 
                         <!-- Button -->
-                        <a href="all-doctors.html" class="btn btn-tra-white blue-hover mt-25">Meet The Doctors</a>
+                        <a href="team.php" class="btn btn-tra-white blue-hover mt-25">Meet The Doctors</a>
 
                     </div>
                 </div>
@@ -477,8 +485,7 @@ if ($record_team) {
 
                     <!-- Text -->
                     <p>
-                        Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                        blandit posuere ligula varius congue cursus porta feugiat
+                    We offer extensive medical procedures to outbound and inbound patients what it is and we are very proud of achievement of our staff, We are all work together to help our all patients for recovery
                     </p>
 
                 </div>
@@ -504,7 +511,8 @@ if ($record_team) {
 
                                 <!-- Profile Link -->
                                 <div class="profile-link">
-                                    <a class="btn btn-sm btn-tra-white black-hover" href="doctor-1.html" title="">View More Info</a>
+                                    <a class="btn btn-sm btn-tra-white black-hover" href="team_details.php?team=<?php echo str_replace(" ","-",$row_team["name"]); ?>" title="">View More
+                                        Info</a>
                                 </div>
 
                             </div>
@@ -515,9 +523,9 @@ if ($record_team) {
                                 <h5 class="h5-sm steelblue-color"><?php echo $row_team["name"]; ?></h5>
                                 <span class="blue-color"><?php echo $row_team["post"]; ?></span>
 
-                                <p class="p-sm grey-color">
-                                    <?php echo $row_team["team_desc"]; ?>
-                                </p>
+                                <!-- <p class="p-sm grey-color">
+                            <?php echo $row_team["team_desc"]; ?>
+                        </p> -->
 
                             </div>
 
@@ -530,7 +538,7 @@ if ($record_team) {
             <div class="row">
                 <div class="col-md-12 text-center">
                     <div class="all-doctors mb-40">
-                        <a href="all-doctors.html" class="btn btn-blue blue-hover">Meet All Doctors</a>
+                        <a href="team.php" class="btn btn-blue blue-hover">Meet All Doctors</a>
                     </div>
                 </div>
             </div>
@@ -564,8 +572,7 @@ if ($recordt) {
                     <h3 class="h3-md steelblue-color">What Our Patients Say</h3>
 
                     <!-- Text -->
-                    <p>Aliquam a augue suscipit, luctus neque purus ipsum neque dolor primis libero at tempus,
-                        blandit posuere ligula varius congue cursus porta feugiat
+                    <p>Our Happy Patients
                     </p>
 
                 </div>
@@ -598,7 +605,7 @@ if ($recordt) {
                                     <!-- Testimonial Author -->
                                     <div class="review-author">
                                         <h5 class="h5-sm"><?php echo $rowt["t_name"]; ?></h5>
-                                        <span><?php echo $rowt["t_title"]; ?></span>
+                                        <!-- <span><?php echo $rowt["t_title"]; ?></span> -->
                                     </div>
 
                                 </div>
@@ -647,14 +654,14 @@ if ($row_wcu) {
 
                         <!-- CONTENT BOX #1 -->
                         <div class="box-list">
-                            <div class="box-list-icon"><i class="fas fa-genderless"></i></div>
+                         
                             <?php echo $row_wcu["page_desc"]; ?>
                         </div>
 
 
 
                         <!-- Button -->
-                        <a href="who-we-are.html" class="btn btn-blue blue-hover mt-25">Who We Are</a>
+                        <a href="about-us.php" class="btn btn-blue blue-hover mt-25">More About Us</a>
 
                     </div>
                 </div> <!-- END TEXT BLOCK -->

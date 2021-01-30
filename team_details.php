@@ -55,24 +55,20 @@ if (isset($_GET["team"])) {
 					<!-- Photo -->
 					<img class="img-fluid" src="images/<?php echo isset($row["img"]) ? $row["img"] : ""; ?>" alt="doctor-foto">
 
-					<!-- Text -->
-					<p class="mt-30">Etiam sapien sem magna at vitae pulvinar congue augue egestas pretium neque
-						id viverra suscipit egestas magna porta ratione, mollis risus lectus porta rutrum arcu aenean
-					</p>
 
 					<!-- Doctor Contacts -->
-					<div class="doctor-contacts">
+					<!-- <div class="doctor-contacts">
 						<h4 class="h4-xs"><i class="fas fa-mobile-alt"></i> 1-(800)-569-7890</h4>
 						<h4 class="h4-xs blue-color"><i class="fas fa-envelope-open-text"></i>
 							<a href="mailto:yourdomain@mail.com" class="blue-color">hello@yourdomain.com</a>
 						</h4>
-					</div>
+					</div> -->
 
 					<!-- Button -->
-					<a href="appointment.html" class="btn btn-md btn-blue blue-hover">Book an Appointment</a>
+					<!-- <a href="appointment.html" class="btn btn-md btn-blue blue-hover">Book an Appointment</a> -->
 
 					<!-- Button -->
-					<a href="timetable.html" class="btn btn-md btn-tra-grey grey-hover">View Timetable</a>
+					<a href="timetable.php" class="btn btn-md btn-tra-grey grey-hover mt-5">View Timetable</a>
 
 				</div>
 			</div> <!-- END DOCTOR PHOTO -->

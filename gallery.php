@@ -62,7 +62,7 @@ require_once("header.php"); ?>
 
 									<!-- Image Zoom -->
 									<div class="image-zoom">
-										<a class="image-link" href="images/<?php echo $row["img"]; ?>" title=""><i class="fas fa-search-plus"></i></a>
+										<a class="image-link" href="images/<?php echo $row["img"]; ?>" title=""><i class="fa fa-search-plus"></i></a>
 									</div>
 
 								</div>

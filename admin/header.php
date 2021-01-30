@@ -18,7 +18,7 @@ if (!isset($_SESSION["admin_email"])) {
     <meta name="author" content="Admin">
 
     <title>Admin Panel</title>
-    <link href="../images/<?php echo isset($_SESSION["logo"]) ? $_SESSION["logo"] : ""; ?>" rel="shortcut icon" type="image/png">
+    <link href="../images/icon.png" rel="shortcut icon" type="image/png">
     <!-- Main Styles -->
     <link rel="stylesheet" href="assets/styles/style.min.css">
 
@@ -53,28 +53,28 @@ if (!isset($_SESSION["admin_email"])) {
 <body>
 
     <script>
-        //Customize your Notification
-        const config = {
-            timeout: 15000,
-            positionY: "bottom", // top or bottom
-            positionX: "right", // right left, center
-            distanceY: 20, // Integer value
-            distanceX: 20, // Integer value
-            zIndex: 100, // Integer value
-            theme: "default", // default, ligh or  dark (leave empty for "default" theme)
-            duplicates: false, // true or false - by default it's false
-        };
-        //Create a new Toastmejs class instance
-        const mytoast = new Toastme(config);
-        //Call it whenever you want!
+    //Customize your Notification
+    const config = {
+        timeout: 15000,
+        positionY: "bottom", // top or bottom
+        positionX: "right", // right left, center
+        distanceY: 20, // Integer value
+        distanceX: 20, // Integer value
+        zIndex: 100, // Integer value
+        theme: "default", // default, ligh or  dark (leave empty for "default" theme)
+        duplicates: false, // true or false - by default it's false
+    };
+    //Create a new Toastmejs class instance
+    const mytoast = new Toastme(config);
+    //Call it whenever you want!
     </script>
 
     <?php
     if (isset($_SESSION["msg"])) {
     ?>
-        <script>
-            mytoast.<?php echo $_SESSION['status']; ?>("<?php echo $_SESSION['msg']; ?>");
-        </script>
+    <script>
+    mytoast.<?php echo $_SESSION['status']; ?>("<?php echo $_SESSION['msg']; ?>");
+    </script>
     <?php
         unset($_SESSION["msg"]);
         unset($_SESSION["status"]);
@@ -91,61 +91,88 @@ if (!isset($_SESSION["admin_email"])) {
             <div class="navigation">
                 <ul class="menu js__accordion">
                     <li class="<?php if ($page == 'dashboard.php') echo 'current'; ?>">
-                        <a class="waves-effect" href="dashboard.php"><i class="menu-icon fa fa-dashboard"></i><span>Dashboard</span></a>
+                        <a class="waves-effect" href="dashboard.php"><i
+                                class="menu-icon fa fa-dashboard"></i><span>Dashboard</span></a>
                     </li>
                     <li class="<?php if ($page == 'admin_details.php') echo 'current'; ?>">
-                        <a class="waves-effect" href="admin_details.php"><i class="menu-icon fa fa-cogs"></i><span>Admin Details</span></a>
+                        <a class="waves-effect" href="admin_details.php"><i class="menu-icon fa fa-cogs"></i><span>Admin
+                                Details</span></a>
                     </li>
                     <li class="<?php if ($page == 'pages.php') echo 'current'; ?>">
-                        <a class="waves-effect" href="pages.php"><i class="menu-icon fa fa-sliders"></i><span>Page Settings</span></a>
+                        <a class="waves-effect" href="pages.php"><i class="menu-icon fa fa-sliders"></i><span>Page
+                                Settings</span></a>
                     </li>
                     <li class="<?php if ($page == 'welcome.php') echo 'current'; ?>">
-                        <a class="waves-effect" href="welcome.php"><i class="menu-icon fa fa-flag"></i><span>Welcome</span></a>
+                        <a class="waves-effect" href="welcome.php"><i
+                                class="menu-icon fa fa-flag"></i><span>Welcome</span></a>
                     </li>
 
-                    <li class="<?php if ($page == 'gallery.php' || $page == "gallery_cat.php" || $page == "video.php") echo 'current active'; ?>">
-                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon mdi mdi-image"></i><span>Gallery</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <li
+                        class="<?php if ($page == 'gallery.php' || $page == "gallery_cat.php" || $page == "video.php") echo 'current active'; ?>">
+                        <a class="waves-effect parent-item js__control" href="#"><i
+                                class="menu-icon mdi mdi-image"></i><span>Gallery</span><span
+                                class="menu-arrow fa fa-angle-down"></span></a>
                         <ul class="sub-menu js__content">
-                            <li class="<?php if ($page == 'gallery.php') echo 'current'; ?>"><a href="gallery.php">Gallery</a></li>
-                            <li class="<?php if ($page == 'video.php') echo 'current'; ?>"><a href="video.php">Videos</a></li>
+                            <li class="<?php if ($page == 'gallery.php') echo 'current'; ?>"><a
+                                    href="gallery.php">Gallery</a></li>
+                            <li class="<?php if ($page == 'video.php') echo 'current'; ?>"><a
+                                    href="video.php">Videos</a></li>
                             <!-- <li class="<?php if ($page == 'gallery_cat.php') echo 'current'; ?>"><a href="gallery_cat.php">Category</a></li> -->
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>
                     <li class="<?php if ($page == 'banners.php') echo 'current active'; ?>">
-                        <a class="waves-effect" href="banners.php"><i class="menu-icon fa fa-flag"></i><span>Banners</span></a>
+                        <a class="waves-effect" href="banners.php"><i
+                                class="menu-icon fa fa-flag"></i><span>Banners</span></a>
                     </li>
-                    <li class="<?php if ($page == 'testimonials.php' || $page == "add_testimonials.php") echo 'current active'; ?>">
-                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-tumblr"></i><span>Testimonials </span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <li
+                        class="<?php if ($page == 'testimonials.php' || $page == "add_testimonials.php") echo 'current active'; ?>">
+                        <a class="waves-effect parent-item js__control" href="#"><i
+                                class="menu-icon fa fa-tumblr"></i><span>Testimonials </span><span
+                                class="menu-arrow fa fa-angle-down"></span></a>
                         <ul class="sub-menu js__content">
-                            <li class="<?php if ($page == 'testimonials.php') echo 'current'; ?>"><a href="testimonials.php">Testimonials</a></li>
-                            <li class="<?php if ($page == 'add_testimonials.php') echo 'current'; ?>"><a href="add_testimonials.php">Add Testimonials</a></li>
+                            <li class="<?php if ($page == 'testimonials.php') echo 'current'; ?>"><a
+                                    href="testimonials.php">Testimonials</a></li>
+                            <li class="<?php if ($page == 'add_testimonials.php') echo 'current'; ?>"><a
+                                    href="add_testimonials.php">Add Testimonials</a></li>
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>
-                    <li class="<?php if ($page == 'features.php' || $page == "add_features.php") echo 'current active'; ?>">
-                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-gift"></i><span>Features</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <li
+                        class="<?php if ($page == 'features.php' || $page == "add_features.php") echo 'current active'; ?>">
+                        <a class="waves-effect parent-item js__control" href="#"><i
+                                class="menu-icon fa fa-gift"></i><span>Features</span><span
+                                class="menu-arrow fa fa-angle-down"></span></a>
                         <ul class="sub-menu js__content">
-                            <li class="<?php if ($page == 'features.php') echo 'current'; ?>"><a href="features.php">Features</a></li>
-                            <li class="<?php if ($page == 'add_features.php') echo 'current'; ?>"><a href="add_features.php">Add Features</a></li>
+                            <li class="<?php if ($page == 'features.php') echo 'current'; ?>"><a
+                                    href="features.php">Features</a></li>
+                            <li class="<?php if ($page == 'add_features.php') echo 'current'; ?>"><a
+                                    href="add_features.php">Add Features</a></li>
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>
-                    <li class="<?php if ($page == 'services.php' || $page == "add_services.php") echo 'current active'; ?>">
-                        <a class="waves-effect parent-item js__control" href="#"><i class="menu-icon fa fa-gears"></i><span>Services</span><span class="menu-arrow fa fa-angle-down"></span></a>
+                    <li
+                        class="<?php if ($page == 'services.php' || $page == "add_services.php") echo 'current active'; ?>">
+                        <a class="waves-effect parent-item js__control" href="#"><i
+                                class="menu-icon fa fa-gears"></i><span>Services</span><span
+                                class="menu-arrow fa fa-angle-down"></span></a>
                         <ul class="sub-menu js__content">
-                            <li class="<?php if ($page == 'services.php') echo 'current'; ?>"><a href="services.php">Services</a></li>
-                            <li class="<?php if ($page == 'add_services.php') echo 'current'; ?>"><a href="add_services.php">Add services</a></li>
+                            <li class="<?php if ($page == 'services.php') echo 'current'; ?>"><a
+                                    href="services.php">Services</a></li>
+                            <li class="<?php if ($page == 'add_services.php') echo 'current'; ?>"><a
+                                    href="add_services.php">Add services</a></li>
                         </ul>
                         <!-- /.sub-menu js__content -->
                     </li>
                     <li class="<?php if ($page == 'clients.php') echo 'current active'; ?>">
-                        <a class="waves-effect" href="clients.php"><i class="menu-icon fa fa-group"></i><span>Our Partners</span></a>
+                        <a class="waves-effect" href="clients.php"><i class="menu-icon fa fa-group"></i><span>Our
+                                Partners</span></a>
                     </li>
                     <li class="<?php if ($page == 'team.php') echo 'current active'; ?>">
-                        <a class="waves-effect" href="team.php"><i class="menu-icon fa fa-group"></i><span>Team</span></a>
+                        <a class="waves-effect" href="team.php"><i
+                                class="menu-icon fa fa-group"></i><span>Team</span></a>
                     </li>
-                   
+
                 </ul>
                 <!-- /.menu js__accordion -->
             </div>
@@ -157,7 +184,8 @@ if (!isset($_SESSION["admin_email"])) {
 
     <div class="fixed-navbar">
         <div class="pull-left">
-            <button type="button" class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
+            <button type="button"
+                class="menu-mobile-button glyphicon glyphicon-menu-hamburger js__menu_mobile"></button>
             <h1 class="page-title"><?php echo strtoupper($_SESSION['admin_name']); ?></h1>
             <!-- /.page-title -->
         </div>
@@ -167,7 +195,7 @@ if (!isset($_SESSION["admin_email"])) {
             <!-- /.ico-item -->
             <div class="ico-item fa fa-arrows-alt js__full_screen"></div>
             <div class="ico-item">
-                <img src="../images/<?php echo isset($_SESSION["logo"]) ? $_SESSION["logo"] : ""; ?>" alt="" class="ico-img">
+                <img src="../images/icon.png" alt="" class="ico-img">
                 <ul class="sub-ico-item">
                     <li><a class="" href="logout.php"><i class="fa fa-sign-out"></i> Log Out</a></li>
                 </ul>

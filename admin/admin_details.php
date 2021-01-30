@@ -134,7 +134,7 @@ require_once("header.php"); ?>
 
 					<div style="margin-top: 10px;" class="box-content">
 						<h4 class="box-title">Site Description</h4>
-						<textarea required name="admin_desc" id="tinymce1">
+						<textarea  required name="admin_desc" id="tinymce1">
 							<?php echo $row["admin_desc"]; ?>
 					</textarea>
 					</div>

@@ -861,6 +861,7 @@ window.location.assign("' . $page . '");
 
 
 if (isset($_POST["add_team"])) {
+    
     if (!empty($_POST["name"])) {
         if (isset($_FILES["img"]["name"])) {
             $img = $obj->imageUpload($_FILES["img"]["tmp_name"], $_FILES["img"]["name"]);
@@ -887,7 +888,9 @@ if (isset($_POST["add_team"])) {
 }
 // update team code ===================================================================
 if (isset($_POST["edit_team"])) {
-
+    // echo "<pre>";
+    // print_r($_POST);
+    // exit;
     if (!empty($_POST["name"])) {
 
         if (isset($_FILES["img"]["name"])) {
@@ -896,8 +899,58 @@ if (isset($_POST["edit_team"])) {
                 $_POST["img"] = $img;
             }
         }
-        $page = $_POST["page"];
-        unset($_POST["page"]);
+
+
+        if (isset($_POST["mon"])) {
+            if ($_POST["mon"] == "on") {
+                $_POST["mon"] = 1;
+            }
+        } else {
+            $_POST["mon"] = 0;
+        }
+        if (isset($_POST["tue"])) {
+            if ($_POST["tue"] == "on") {
+                $_POST["tue"] = 1;
+            }
+        } else {
+            $_POST["tue"] = 0;
+        }
+        if (isset($_POST["wed"])) {
+            if ($_POST["wed"] == "on") {
+                $_POST["wed"] = 1;
+            }
+        } else {
+            $_POST["wed"] = 0;
+        }
+        if (isset($_POST["thu"])) {
+            if ($_POST["thu"] == "on") {
+                $_POST["thu"] = 1;
+            }
+        } else {
+            $_POST["thu"] = 0;
+        }
+        if (isset($_POST["fri"])) {
+            if ($_POST["fri"] == "on") {
+                $_POST["fri"] = 1;
+            }
+        } else {
+            $_POST["fri"] = 0;
+        }
+        if (isset($_POST["sat"])) {
+            if ($_POST["sat"] == "on") {
+                $_POST["sat"] = 1;
+            }
+        } else {
+            $_POST["sat"] = 0;
+        }
+        if (isset($_POST["sun"])) {
+            if ($_POST["sun"] == "on") {
+                $_POST["sun"] = 1;
+            }
+        } else {
+            $_POST["sun"] = 0;
+        }
+      
         $where = array(
             "id" => $_POST["id"]
         );
@@ -912,7 +965,7 @@ if (isset($_POST["edit_team"])) {
         $_SESSION["msg"] = "Fill All Fields !!!";
         $_SESSION["status"] = "error";
     }
-    // $page  = "team.php";
+    $page  = "team.php";
     echo '<script>
     window.location.assign("' . $page . '");
     </script>';
@@ -1662,4 +1715,43 @@ if (isset($_GET["del_video"])) {
     echo '<script>
 window.location.assign("' . $page . '");
 </script>';
+}
+
+
+
+
+if (isset($_POST["state_home_show"])) {
+
+    if (!empty($_POST["id"])) {
+
+        if (isset($_POST["home_show"])) {
+            if ($_POST["home_show"] == "on") {
+                $_POST["home_show"] = 1;
+            }
+        } else {
+            $_POST["home_show"] = 0;
+        }
+
+        // echo "<pre>";
+        // print_r($_POST);
+        // exit;
+
+        $where = array(
+            "id" => $_POST["id"]
+        );
+        unset($_POST["state_home_show"]);
+        unset($_POST["sid"]);
+
+        if ($obj->updateData("services", $where, $_POST)) {
+            $_SESSION["msg"] = "Update Successfully";
+            $_SESSION["status"] = "success";
+        }
+    } else {
+        $_SESSION["msg"] = "Fill All Fields !!!";
+        $_SESSION["status"] = "error";
+    }
+    $page  = "services.php";
+    echo '<script>
+    window.location.assign("' . $page . '");
+    </script>';
 }
